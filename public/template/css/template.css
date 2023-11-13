@@ -1,0 +1,120 @@
+:root {
+    --bs-green-intelix: #9ee652;
+    --bs-green-intelix-strong: #7fcf28;
+    --bs-green-intelix-light: #effde0;
+    --bs-primary: var(--bs-green-intelix);
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-primary-rgb: 158, 230, 82;
+    --bs-secondary-rgb: 116, 120, 141;
+    --bs-success-rgb: 52, 195, 143;
+    --bs-info-rgb: 80, 165, 241;
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: #f6f6f6;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-link-color: var(--bs-green-intelix-strong);
+    --bs-link-hover-color: var(--bs-link-hover-color);
+    --bs-sidebar-menu-item-active-color: var(--bs-green-intelix-strong);
+    --bs-menu-item-active-color: var(--bs-green-intelix-strong);
+    --bs-link-color: var(--bs-green-intelix-strong);
+    --bs-link-hover-color: var(--bs-green-intelix-strong);
+    --bs-pagination-disabled-color: #ced4da;
+}
+
+.pagination {
+    --bs-pagination-active-bg: var(--bs-green-intelix);
+    --bs-pagination-active-border-color: var(--bs-green-intelix);
+}
+
+
+/* formularios */
+.input-invalid {
+    border: 1px solid #f46a6a;
+}
+
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid var(--bs-border-color);
+    opacity: 1;
+}
+
+.authentication-bg {
+    background-color: var(--bs-gray-300);
+}
+
+@media (min-width: 576px) {
+    .btn-url .d-sm-block {
+        display: inline-block !important;
+    }
+}
+
+/* fix inputs con iconos (mensajes de error) */
+.parsley-errors-list {
+    position: absolute;
+    bottom: 0px;
+}
+
+.input-group:has(.parsley-error) {
+    padding-bottom: 20px;
+}
+
+.input-group input::placeholder {
+    color: var(--bs-pagination-disabled-color);
+}
+
+/* imput img cropper */
+
+.img-cropped-selected {
+    max-height: 80px;
+    margin-top: 10px;
+    border: 4px solid #f4f5f6;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.img-cropped-container button {
+    margin-left: 10px;
+}
+
+/* ==================  BTN PRIMARY =========================  */
+
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-green-intelix);
+    --bs-btn-border-color: var(--bs-green-intelix);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-green-intelix-strong);
+    --bs-btn-hover-border-color: var(--bs-green-intelix-strong);
+    --bs-btn-focus-shadow-rgb: 116, 136, 235;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-green-intelix-strong);
+    --bs-btn-active-border-color: var(--bs-green-intelix-strong);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-green-intelix-strong);
+    --bs-btn-disabled-border-color: var(--bs-green-intelix);
+}
+
+.nav-tabs {
+    --bs-nav-tabs-link-active-bg: var(--bs-green-intelix-light);
+    --bs-nav-tabs-link-active-border-color: var(--bs-green-intelix-light) var(--bs-green-intelix-light) var(--bs-green-intelix-light);
+}
+
+.nav-tabs-custom .nav-item .nav-link.active {
+    color: var(--bs-green-intelix-strong)
+}
+
+.nav-tabs-custom .nav-item .nav-link::after {
+    background: var(--bs-green-intelix)
+}
+
+.delete-link-confirm {
+    cursor: pointer;
+}
+
+/* ================================== INPUTS ========================================= */
+input[switch]:checked+label {
+    background-color: var(--bs-green-intelix);
+}
