@@ -35,9 +35,29 @@ class AjaxClientsController extends MAVIController
         return $this->render('Mavi/Ajax/Clients/view', compact('A_client'));
     }
 
+    public function data($ID_client_id)
+    {
+        $E_client = Client::find($ID_client_id);
+        if (!$E_client) {
+            abort(404);
+        }
+
+        return response()->json($E_client->toArray());
+    }
+
     public function add()
     {
         return $this->__save();
+    }
+
+    public function edit($ID_client_id)
+    {
+        $E_client = Client::find($ID_client_id);
+        if (!$E_client) {
+            abort(404);
+        }
+
+        return $this->__save($ID_client_id);
     }
 
     private function __save($ID_client_id = null)

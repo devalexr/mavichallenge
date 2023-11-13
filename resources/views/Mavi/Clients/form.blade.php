@@ -2,6 +2,10 @@
 @section('content')
 
 
+@if(isset($ID_client_id))
+    <div id="DIV_client_id" data-client-id="{{$ID_client_id}}"></div>
+@endif
+
 <x-forms.form
     type="center-small"
     :inputs="[
@@ -40,4 +44,4 @@
 
 @endsection
 
-<script src="{{ asset('js/clients/form.js')}}"></script>
+<script src="{{ asset('js/clients/'.$S_action.'.js')}}"></script>

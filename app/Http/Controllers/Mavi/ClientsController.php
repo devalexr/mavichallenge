@@ -44,6 +44,14 @@ class ClientsController extends MAVIController
     {
         $this->_title('Ver cliente');
 
+        $this->_btnAccionSET([
+            [
+                'type' => 'edit',
+                'text' => 'Editar',
+                'url' => '/clients/edit/' . $ID_client_id,
+            ],
+        ]);
+
         return $this->render('Mavi/Clients/view', compact('ID_client_id'));
     }
 
@@ -51,6 +59,17 @@ class ClientsController extends MAVIController
     {
         $this->_title('Nuevo cliente');
 
-        return $this->render('Mavi/Clients/form');
+        $S_action = 'add';
+
+        return $this->render('Mavi/Clients/form', compact('S_action'));
+    }
+
+    public function edit($ID_client_id)
+    {
+        $this->_title('Editar cliente');
+
+        $S_action = 'edit';
+
+        return $this->render('Mavi/Clients/form', compact('S_action', 'ID_client_id'));
     }
 }
