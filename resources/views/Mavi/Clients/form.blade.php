@@ -3,7 +3,7 @@
 
 
 @if(isset($ID_client_id))
-    <div id="DIV_client_id" data-client-id="{{$ID_client_id}}"></div>
+    <div id="DIV_client" data-client-id="{{$ID_client_id}}"></div>
 @endif
 
 <x-forms.form
@@ -42,6 +42,7 @@
     submit="Guardar"
 />
 
+<script src="{{ asset('js/clients/'.$S_action.'.js')}}"></script>
+
 @endsection
 
-<script src="{{ asset('js/clients/'.$S_action.'.js')}}"></script>

@@ -8,8 +8,8 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <a href="/" class="mb-5 d-block auth-logo">
-                                <img src="/images/logo-dark.png" alt="" height="50" class="logo logo-dark">
-                                <img src="/images/logo-light.png" alt="" height="50" class="logo logo-light">
+                                <img src="/template/images/logo-dark.png" alt="" height="50" class="logo logo-dark">
+                                <img src="/template/images/logo-light.png" alt="" height="50" class="logo logo-light">
                             </a>
                         </div>
                     </div>
