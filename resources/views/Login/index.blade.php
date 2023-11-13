@@ -12,9 +12,6 @@
                 </div>
                 <div class="p-2 mt-4">
                     <x-ui.messages.flash />
-                    <?php 
-                    $HTML_link_perdiste_pass = '<div class="float-end"><a href="/auth/recovery" class="text-muted">¿Perdiste tu contraseña?</a></div><br />';    
-                    ?>
                     <x-forms.form
                         action="/auth/login"
                         :inputs="[
@@ -25,6 +22,7 @@
                                 'placeholder' => 'usuario@mail.com',
                                 'autofocus' => true,
                                 'required' => true,
+                                'default' => 'mail@mail.com'
                             ],
                             [
                                 'type' => 'password',
@@ -32,7 +30,7 @@
                                 'label' => 'Contraseña',
                                 'placeholder' => 'Ingresa tu contraseña',
                                 'required' => true,
-                                'bottom' => $HTML_link_perdiste_pass,
+                                'default' => '12345678'
                             ],
                         ]" 
                         submit="Ingresar"

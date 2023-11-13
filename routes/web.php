@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Mavi\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Mavi\ClientsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 //login
 Route::get('/', [LoginController::class, 'index']);
+Route::post('auth/login', [LoginController::class, 'login']);
+
+//clients
+Route::get('/clients', [ClientsController::class, 'index']);

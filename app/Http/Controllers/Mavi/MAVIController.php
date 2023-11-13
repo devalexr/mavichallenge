@@ -7,22 +7,28 @@ use App\Http\Controllers\TEMPLATEController;
 
 class MAVIController extends TEMPLATEController
 {
+    protected $SESSION_USER = null;
+
     public function __construct()
     {
         parent::__construct();
 
+        dump(auth()->id()); // 
+
         //check session user
         $USER_user = Auth::user();
 
+        dd($USER_user);
+
         //is not in session, redirect to login
         if (!$USER_user) {
-            $this->redirect('/');
+            //$this->redirect('/');
         }
 
-        $this->_breadcumbADD([
-            'name' => 'Clientes',
-            'url' => '/clients',
-        ]);
+        //assign User data to global variable
+        $this->SESSION_USER = $USER_user;
+        //set User data in view
+        $this->_VIEW_DATA['SESSION_user'] = $this->SESSION_USER;
     }
 
     protected function _beforeRender()

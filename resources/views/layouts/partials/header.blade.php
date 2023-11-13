@@ -32,6 +32,16 @@
                 </button>
             </div>
         </div>
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="rounded-circle header-profile-user" src="/template/images/users/default.png" alt="Header Avatar">
+                <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">{{$SESSION_user['name']}}</span>
+                <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <?php MENUUserItem('Salir', '/logout', 'sign-out-alt') ?>
+            </div>
+        </div>
     </div>
 </header>
 
