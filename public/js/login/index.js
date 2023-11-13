@@ -18,6 +18,7 @@ $(document).ready(function (event) {
                     window.location.replace('/clients');
                 } else {
                     alert(JSON_response.message);
+                    BTN_submit.prop('disabled', false);
                 }
             },
             error: function (xhr, status) {

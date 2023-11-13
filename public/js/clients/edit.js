@@ -1,7 +1,7 @@
 
-document.addEventListener("DOMContentLoaded", function (event) {
+$(document).ready(function (event) {
 
-    const ID_client_id = parseInt($('#DIV_client_id').data('client-id'));
+    const ID_client_id = parseInt($('#DIV_client').data('client-id'));
     var BTN_submit = $(":input[type=submit]");
 
     __getClientDATA();
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 populate($('form'), JSON_response)
             },
             error: function (xhr, status) {
+                alert('Ocurrio un error');
                 window.location.replace('/clients/');
             },
         });

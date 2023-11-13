@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function (event) {
+$(document).ready(function (event) {
 
     var BTN_submit = $(":input[type=submit]");
 
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     window.location.replace("/clients/view/" + JSON_response.id);
                 } else {
                     alert(JSON_response.message);
+                    BTN_submit.prop('disabled', false);
                 }
             },
             error: function (xhr, status) {
