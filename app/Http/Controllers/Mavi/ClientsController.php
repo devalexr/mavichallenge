@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Mavi;
 
+use App\Models\Client;
+
 class ClientsController extends MAVIController
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -23,6 +24,11 @@ class ClientsController extends MAVIController
     public function index()
     {
         $this->_title('Inicio');
-        return $this->render('Mavi/Clients/index');
+
+        $PAGINATION_index = Client::select('*')
+            ->orderBy('name', 'ASC')
+            ->paginate($this->_paginationResults);
+
+        return $this->render('Mavi/Clients/index', compact('PAGINATION_index'));
     }
 }

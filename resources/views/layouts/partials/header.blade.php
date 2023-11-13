@@ -24,14 +24,6 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
         </div>
-
-        <div class="d-flex">
-            <div class="dropdown d-none d-lg-inline-block ms-1">
-                <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
-                    <i class="uil-minus-path"></i>
-                </button>
-            </div>
-        </div>
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="rounded-circle header-profile-user" src="/template/images/users/default.png" alt="Header Avatar">

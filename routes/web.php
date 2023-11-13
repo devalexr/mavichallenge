@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Mavi\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Mavi\AjaxClientsController;
 use App\Http\Controllers\Mavi\ClientsController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,7 @@ Route::post('auth/login', [LoginController::class, 'login']);
 
 //clients
 Route::get('/clients', [ClientsController::class, 'index']);
+
+//ajax
+Route::get('/ajax/clients/index', [AjaxClientsController::class, 'index']);
+Route::get('/ajax/clients/delete', [AjaxClientsController::class, 'delete']);
