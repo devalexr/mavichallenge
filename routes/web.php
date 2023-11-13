@@ -23,9 +23,11 @@ Route::post('auth/login', [LoginController::class, 'login']);
 
 //clients
 Route::get('/clients', [ClientsController::class, 'index']);
+Route::get('/clients/add', [ClientsController::class, 'add']);
 Route::get('/clients/view/{ID_client_id}', [ClientsController::class, 'view']);
 
 //ajax
 Route::get('/ajax/clients/index', [AjaxClientsController::class, 'index']);
 Route::get('/ajax/clients/view/{ID_client_id}', [AjaxClientsController::class, 'view']);
+Route::post('/ajax/clients/add', [AjaxClientsController::class, 'add']);
 Route::get('/ajax/clients/delete', [AjaxClientsController::class, 'delete']);

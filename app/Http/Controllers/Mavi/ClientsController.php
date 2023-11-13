@@ -25,6 +25,14 @@ class ClientsController extends MAVIController
     {
         $this->_title('Inicio');
 
+        $this->_btnAccionSET([
+            [
+                'type' => 'add',
+                'text' => 'Nuevo cliente',
+                'url' => '/clients/add',
+            ],
+        ]);
+
         $PAGINATION_index = Client::select('*')
             ->orderBy('name', 'ASC')
             ->paginate($this->_paginationResults);
@@ -37,5 +45,12 @@ class ClientsController extends MAVIController
         $this->_title('Ver cliente');
 
         return $this->render('Mavi/Clients/view', compact('ID_client_id'));
+    }
+
+    public function add()
+    {
+        $this->_title('Nuevo cliente');
+
+        return $this->render('Mavi/Clients/form');
     }
 }
