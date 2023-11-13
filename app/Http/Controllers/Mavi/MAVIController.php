@@ -2,18 +2,26 @@
 
 namespace App\Http\Controllers\Mavi;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TEMPLATEController;
 
 class MAVIController extends TEMPLATEController
 {
-
     public function __construct()
     {
         parent::__construct();
 
+        //check session user
+        $USER_user = Auth::user();
+
+        //is not in session, redirect to login
+        if (!$USER_user) {
+            $this->redirect('/');
+        }
+
         $this->_breadcumbADD([
-            'name' => 'Inicio',
-            'url' => '/',
+            'name' => 'Clientes',
+            'url' => '/clients',
         ]);
     }
 
@@ -22,9 +30,9 @@ class MAVIController extends TEMPLATEController
         $A_menu = [
             ['title' => 'MENU'],
             [
-                'name' => 'Inicio',
-                'icon' => 'uil-home-alt',
-                'url' => '/',
+                'name' => 'Clientes',
+                'icon' => 'uil-users-alt',
+                'url' => '/clients',
             ],
         ];
 

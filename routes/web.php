@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Mavi\DashboardController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//index
-Route::get('/', [DashboardController::class, 'index']);
+//login
+Route::get('/', [LoginController::class, 'index']);
