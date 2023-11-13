@@ -26,11 +26,50 @@ function __loadTablePage(I_page) {
         dataType: 'html',
         success: function (HTML_response) {
             TBODY_table.html(HTML_response);
-            __initSWeetAlertLinks();
+            __initDeleteBTNS();
         },
         error: function (xhr, status) {
             alert('Disculpe, existió un problema');
         },
+    });
+}
 
+function __initDeleteBTNS() {
+    $(".delete-link-confirm").click(function (event) {
+
+        event.preventDefault();
+        var TR_table = $(this).closest('tr');
+        const ID_client_id = this.dataset.id;
+
+        Swal.fire(
+            {
+                title: "Eliminar Registro",
+                text: "¿Estás seguro que deseas eliminar este registro?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#f46a6a",
+                cancelButtonColor: "#d3d3d3",
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: "Eliminar"
+            }).then(function (t) {
+                if (t.value) {
+
+                    $.ajax({
+                        url: '/ajax/clients/delete/' + ID_client_id,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (JSON_response) {
+                            if (JSON_response.success) {
+                                TR_table.remove();
+                            } else {
+                                alert(JSON_response.message);
+                            }
+                        },
+                        error: function (xhr, status) {
+                            alert('Disculpe, existió un problema');
+                        },
+                    });
+                }
+            });
     });
 }

@@ -201,29 +201,6 @@ function toast(S_type, S_title, S_subtitle, HTML_message) {
 
 function __initSWeetAlertLinks() {
     //================================= SWEET ALERT ================================
-    $(".delete-link-confirm").click(function (event) {
-
-        event.preventDefault();
-        const URL_redirect = this.dataset.url;
-
-        Swal.fire(
-            {
-                title: "Eliminar Registro",
-                text: "¿Estás seguro que deseas eliminar este registro?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#f46a6a",
-                cancelButtonColor: "#d3d3d3",
-                cancelButtonText: 'Cancelar',
-                confirmButtonText: "Eliminar"
-            }).then(function (t) {
-                if (t.value) {
-                    window.location.replace(URL_redirect);
-                }
-            });
-
-    });
-
     $('.info-link-confirm').on('click', function (event) {
 
         event.preventDefault();

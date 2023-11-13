@@ -60,6 +60,20 @@ class AjaxClientsController extends MAVIController
         return $this->__save($ID_client_id);
     }
 
+    public function delete($ID_client_id)
+    {
+        $E_client = Client::find($ID_client_id);
+        if (!$E_client) {
+            abort(404);
+        }
+
+        if ((bool)$E_client->delete()) {
+            return response()->json(['success' => true, 'message' => 'Cliente eliminado']);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Ocurrio un error al eliminar el cliente']);
+        }
+    }
+
     private function __save($ID_client_id = null)
     {
         //validate form

@@ -33,4 +33,4 @@ Route::get('/ajax/clients/view/{ID_client_id}', [AjaxClientsController::class, '
 Route::get('/ajax/clients/data/{ID_client_id}', [AjaxClientsController::class, 'data']);
 Route::post('/ajax/clients/add', [AjaxClientsController::class, 'add']);
 Route::post('/ajax/clients/edit/{ID_client_id}', [AjaxClientsController::class, 'edit']);
-Route::get('/ajax/clients/delete', [AjaxClientsController::class, 'delete']);
+Route::get('/ajax/clients/delete/{ID_client_id}', [AjaxClientsController::class, 'delete']);
