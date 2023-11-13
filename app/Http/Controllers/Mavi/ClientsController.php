@@ -31,4 +31,11 @@ class ClientsController extends MAVIController
 
         return $this->render('Mavi/Clients/index', compact('PAGINATION_index'));
     }
+
+    public function view($ID_client_id)
+    {
+        $this->_title('Ver cliente');
+
+        return $this->render('Mavi/Clients/view', compact('ID_client_id'));
+    }
 }
