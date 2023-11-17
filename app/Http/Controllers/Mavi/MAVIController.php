@@ -15,11 +15,12 @@ class MAVIController extends TEMPLATEController
     {
         parent::__construct();
 
-        //assign User data to global variable
-        $this->SESSION_USER = [
-            'name' => 'Alejandro Robles',
-        ];
-        //set User data in view
+        $USER_user = Auth::user();
+
+        if (!$USER_user) {
+            $this->redirect('/');
+        }
+        $this->SESSION_USER = $USER_user;
         $this->_VIEW_DATA['SESSION_user'] = $this->SESSION_USER;
     }
 

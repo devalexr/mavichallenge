@@ -9,37 +9,28 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends TEMPLATEController
 {
-    public function __construct()
+    public function index()
     {
-        parent::__construct();
         if (Auth::user()) {
             $this->redirect('/clients');
         }
-    }
 
-    public function index()
-    {
-        $this->_title('Login');
-        return $this->render('Login/index');
-    }
-
-    public function login()
-    {
-        if ($this->request->ajax()) {
+        if ($this->request->isMethod('POST')) {
             $DATA_login = $this->request->validate([
                 'email' => ['required', 'email', 'string'],
                 'password' => ['required', 'string']
             ]);
-
             if (Auth::attempt(['email' => $DATA_login['email'], 'password' => $DATA_login['password']], true)) {
-                request()->session()->regenerate();
-                return response()->json(['success' => true]);
+                $this->request->session()->regenerate();
+                return redirect('/clients');
             } else {
-                return response()->json(['success' => false, 'message' => 'No se logro inicar sesion']);
+                $this->MSJError('Correo electrónico o contraseña incorrectos.');
             }
-        } else {
-            abort(404);
         }
+
+        $this->_title('Login');
+
+        return $this->render('Login/index');
     }
 
     public function logout()

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 //login
 Route::get('/', [LoginController::class, 'index']);
-Route::post('/ajax/login', [LoginController::class, 'login']);
+Route::post('/auth/login', [LoginController::class, 'index']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 //clients

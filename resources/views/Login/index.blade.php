@@ -41,7 +41,4 @@
     </div>
 </div>
 <!-- end row -->
-
-<script src="{{ asset('js/login/index.js')}}"></script>
-
 @endsection
